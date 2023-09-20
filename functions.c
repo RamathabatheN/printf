@@ -58,8 +58,6 @@ return (n);
  */
 unsigned sign_HEXA(unsigned int n)
 {
-int i;
-char buf[32];
 if (n / 16)
 sign_hexa(n / 16);
 _putchar(n % 16 + '0'); 
