@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <limits.h>
 #include <stdarg.h>
-#include <stdint.h>
 #include "main.h"
 #define BUFF_SIZE (1024)
 
@@ -18,7 +17,7 @@
 void prints(const char *format, va_list more)
 {
 int i = 0, b;
-char g; /*h = '%';
+char g;
 unsigned int e = 0;
 char *d;
 void *k;
@@ -100,10 +99,12 @@ default:
 format++;
 }
 state = 0;
+
 }
 format++;
 }
 }
+
 int _printf(const char *format, ...)
 {
 va_list more;

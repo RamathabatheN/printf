@@ -7,18 +7,6 @@
 #include <limits.h>
 #include <stdint.h>
 
-/**
- * struct sign - Struct sign
- *
- * @sign: The operator
- * @f: The function associated
- */
-/*typedef struct sign
-{
-char *signed;
-int (*f)(int a);
-} sig_n;*/
-
 void prints(const char *format, va_list more);
 int _putchar(char c);
 int _abs(int n);
