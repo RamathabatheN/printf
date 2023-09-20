@@ -90,13 +90,14 @@ break;
 case '%':
 _putchar('%');
 break;
-case 'r':
+/*case 'r':
 d = va_arg(more, char *);
 rev_string(d);
 v = write(1, &d, _strlen(d));
-break;
+break;*/
 default:
-format++;
+_putchar('%');
+_putchar(*format);
 }
 state = 0;
 
@@ -105,6 +106,12 @@ format++;
 }
 }
 
+/**
+ * _printf - prints everything
+ * @format:string input
+ * @...: extra arguments
+ * Return: Always 0
+ */
 int _printf(const char *format, ...)
 {
 va_list more;
