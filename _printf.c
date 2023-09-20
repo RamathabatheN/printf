@@ -18,8 +18,7 @@
 void prints(const char *format, va_list more)
 {
 int i = 0, b;
-/*int __attribute__ ((unused)) buff_index;*/
-char g; /*h = '%';*/
+char g; /*h = '%';
 unsigned int e = 0;
 char *d;
 void *k;
