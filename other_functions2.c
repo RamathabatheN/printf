@@ -92,8 +92,10 @@ return(0);
 ssize_t sign_string(char *s)
 {
 int leng;
+if (s == NULL)
+exit(1);
 for (leng = 0; s[leng]; leng++)
 {
 }
-return (write(1, s, leng));;
+return (write(1, s, leng));
 }
