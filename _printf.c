@@ -48,6 +48,7 @@ break;
 case 's':
 d = va_arg(more, char *);
 sign_string(d);
+write(1, d, strlen(d));
 break;
 case 'i':
 b = va_arg(more, int);

@@ -36,7 +36,7 @@ int sign_hexa(unsigned int n);
 int sign_HEXA(unsigned int n);
 char sign_per(void);
 int sign_char(char s);
-ssize_t sign_string(char *s);
+char *sign_string(char *s);
 int _printf(const char *format, ...);
 void print_buf(char buffer[], int *buff_ind);
 
