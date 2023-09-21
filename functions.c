@@ -6,60 +6,84 @@
 /**
  * num_binary - prints decimals in binary
  * @n: int to print
- * Return: binary
+ * Return: Always 0
  */
-unsigned int num_binary(unsigned int n)
+int num_binary(unsigned int n)
 {
 if (n / 2)
 num_binary(n / 2);
 _putchar(n % 2 + '0');
-return (n);
+return (0);
 }
+
 /**
  * sign_unsigned - prints unsigned int
  * @n: int to print
- * Return: unsigned int
+ * Return: Always 0
  */
-unsigned int sign_unsigned(unsigned int n)
+int sign_unsigned(unsigned int n)
 {
 if (n / 10)
 sign_unsigned(n / 10);
 _putchar(n % 10 + '0');
-return (n); 
+return (0);
 }
+
 /**
  * sign_octal - prints decimals in octal
  * @n: int to print
- * Return: octal
+ * Return: Always 0
  */
-unsigned int sign_octal(unsigned int n)
+int sign_octal(unsigned int n)
 {
 if (n / 8)
 sign_octal(n / 8);
 _putchar(n % 8 + '0');
-return (n);
+return (0);
 }
+
 /**
  * sign_hexa - prints decimals in hexa
  * @n: int to print
- * Return: hexa
+ * Return: Always 0
  */
-unsigned sign_hexa(unsigned int n)
+int sign_hexa(unsigned int n)
 {
-if (n / 16)
-sign_hexa(n / 16);
-_putchar(n % 16 + '0');
-return (n);
+char hexa[100];
+int a = 0, p;
+while (n != 0)
+{
+hexa[a] = (char)(*("0123456789abcdef"
++ ((n % 16) & (15))));
+n = (n / 16);
+++a;
 }
+for (p = a - 1; p >= 0; p--)
+{
+_putchar(hexa[p]);
+}
+return (0);
+}
+
 /**
  * sign_HEXA - prints decimals in HEXA
  * @n: int to print
- * Return: HEXA
+ * Return: Always 0
  */
-unsigned sign_HEXA(unsigned int n)
+int sign_HEXA(unsigned int n)
 {
-if (n / 16)
-sign_hexa(n / 16);
-_putchar(n % 16 + '0'); 
-return (n);
+char hexa[100];
+int a = 0, p;
+while (n != 0)
+{
+hexa[a] = (char)(*("0123456789ABCDE"
++ ((n % 16) & (15))));
+n = (n / 16);
+++a;
+}
+for (p = a - 1; p >= 0; p--)
+{
+_putchar(hexa[p]);
+}
+return (0);
 }
