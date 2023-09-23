@@ -19,23 +19,25 @@ return (write(1, &c, 1));
 /**
  * rev_string - Reverses a string
  * @s: string input
- * Return: String in reverse
+ * Return: void
  */
 void rev_string(char *str)
 {
-char swap = str[0];
-int counter = 0, a;
-while (str[counter] != '\0')
-counter++;
-for (a = 0; a < counter; a++)
+int top = 0;
+int a;
+while (*str != '\0')
 {
-counter--;
-swap = str[a];
-str[a] = str[counter];
-str[counter] = swap;
+top++;
+str++;
 }
+str--;
+for (a = top; a > 0; a--)
+{
+_putchar(*str);
+str--;
 }
-
+_putchar('\n');
+}
 
 /**
  * _strlen - returns string length

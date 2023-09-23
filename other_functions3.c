@@ -16,3 +16,87 @@ _putchar(a);
 /*write(1, &a, 1);*/
 return (a);
 }
+
+/**
+ * addresses - address of pointer
+ * @a:input number
+ * @buffer:string
+ */
+void addresses(void *i)
+{
+unsigned int a;
+char buffer[BUFF_SIZE];
+unsigned int b;
+i = malloc(sizeof(unsigned int)*a);
+if (i == NULL)
+exit(98);
+/*_itoa((uintptr_t)i, buffer, 16);*/
+for (b = 0; b < a; b++)
+{
+_putchar(buffer[b]);
+}
+}
+
+/**
+ * _strlens - returns string length
+ * @st:string input
+ * Return: string length
+ */
+int _strlens(const char *st)
+{
+int len = 0;
+while (*st != '\0')
+{
+len++;
+st++;
+}
+return len;
+}
+
+/**
+ * non_printable - diplays non-printables
+ * Return: Always 0
+ */
+int non_printable(char *buffer)
+{
+int s;
+char o;
+for (s = 0; buffer[s] != '\0'; s++) 
+{
+o = buffer[s];
+if (o >= 32 && o <= 126) 
+{
+_putchar(o);
+} 
+else
+{
+_putchar('\\');
+_putchar('x');
+sign_HEXAs(s);
+}
+}
+return 0;
+}
+
+/**
+ * sign_HEXAs - prints decimals in HEXA
+ * @n: int to print
+ * Return: Always 0
+ */
+int sign_HEXAs(unsigned int n)
+{
+char hexa[100];
+int a = 0, p;
+while (n != 0)
+{
+hexa[a] = (char)(*("0123456789ABCDEF"
++ ((n % 16) & (2))));
+n = (n / 16);
+++a;
+}
+for (p = a - 1; p >= 0; p--)
+{
+_putchar(hexa[p]);
+}
+return (0);
+}

@@ -76,7 +76,7 @@ char hexa[100];
 int a = 0, p;
 while (n != 0)
 {
-hexa[a] = (char)(*("0123456789ABCDE"
+hexa[a] = (char)(*("0123456789ABCDEF"
 + ((n % 16) & (15))));
 n = (n / 16);
 ++a;
