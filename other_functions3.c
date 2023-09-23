@@ -25,15 +25,12 @@ return (a);
 void addresses(void *i)
 {
 unsigned int a;
-char buffer[BUFF_SIZE];
-unsigned int b;
-i = malloc(sizeof(unsigned int)*a);
-if (i == NULL)
-exit(98);
-/*_itoa((uintptr_t)i, buffer, 16);*/
-for (b = 0; b < a; b++)
+char *c;
+c = (char *)&i;
+while (*c != '\0')
 {
-_putchar(buffer[b]);
+write(1, c, _strlen(c));
+c++; 
 }
 }
 
