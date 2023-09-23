@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stddef.h>
 #include "main.h"
 
 /**
@@ -18,18 +19,18 @@ return (a);
 }
 
 /**
- * addresses - address of pointer
- * @a:input number
- * @buffer:string
+ * addresses - prints the address of a pointer
+ * @i:pointer
+ * Return: void
  */
 void addresses(void *i)
 {
-unsigned int a;
+ssize_t __attribute__ ((unused)) a;
 char *c;
 c = (char *)&i;
 while (*c != '\0')
 {
-write(1, c, _strlen(c));
+a = write(1, c, _strlen(c));
 c++; 
 }
 }
