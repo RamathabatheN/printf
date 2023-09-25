@@ -87,15 +87,13 @@ return(0);
 /**
  * sign_string - prints string
  * @s: input string
- * Return: string
+ * Return: write
  */
-char *sign_string(char *s)
+ssize_t sign_string(char *s)
 {
 int leng;
-if (s == NULL)
-return (NULL);
 for (leng = 0; s[leng]; leng++)
 {
 }
-return (s);
+return (write(1, s, leng));;
 }
