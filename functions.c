@@ -12,7 +12,7 @@ int num_binary(unsigned int n)
 {
 if (n / 2)
 num_binary(n / 2);
-_putchar(n % 2 + '0');
+putchar(n % 2 + '0');
 return (0);
 }
 
@@ -25,7 +25,7 @@ int sign_unsigned(unsigned int n)
 {
 if (n / 10)
 sign_unsigned(n / 10);
-_putchar(n % 10 + '0');
+putchar(n % 10 + '0');
 return (0);
 }
 
@@ -38,7 +38,7 @@ int sign_octal(unsigned int n)
 {
 if (n / 8)
 sign_octal(n / 8);
-_putchar(n % 8 + '0');
+putchar(n % 8 + '0');
 return (0);
 }
 
@@ -60,7 +60,7 @@ n = (n / 16);
 }
 for (p = a - 1; p >= 0; p--)
 {
-_putchar(hexa[p]);
+putchar(hexa[p]);
 }
 return (0);
 }
@@ -83,7 +83,7 @@ n = (n / 16);
 }
 for (p = a - 1; p >= 0; p--)
 {
-_putchar(hexa[p]);
+putchar(hexa[p]);
 }
 return (0);
 }

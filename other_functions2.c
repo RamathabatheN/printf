@@ -68,7 +68,7 @@ char buf[12];
 _itoa(n, buf, 10);
 for (i = 0; buf[i]; i++)
 {
-_putchar(buf[i]);
+putchar(buf[i]);
 }
 return (0);
 }
@@ -79,9 +79,7 @@ return (0);
  */
 int sign_char(char s)
 {
-_putchar(s);
-/*write(1, &s, 1);*/
-return(0);
+return (write(1, &s, 1));
 }
 
 /**
@@ -89,11 +87,11 @@ return(0);
  * @s: input string
  * Return: write
  */
-ssize_t sign_string(char *s)
+int sign_string(char *s)
 {
 int leng;
-for (leng = 0; s[leng]; leng++)
+for (leng = 0; s[leng] != '\0'; leng++)
 {
 }
-return (write(1, s, leng));;
+return (write(1, s, leng));
 }

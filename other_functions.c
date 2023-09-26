@@ -33,10 +33,10 @@ str++;
 str--;
 for (a = top; a > 0; a--)
 {
-_putchar(*str);
+putchar(*str);
 str--;
 }
-_putchar('\n');
+putchar('\n');
 }
 
 /**
@@ -52,7 +52,7 @@ while (*st != '\0')
 len++;
 st++;
 }
-return len;
+return (len);
 }
  
 /**

@@ -13,9 +13,7 @@ char sign_per(void)
 {
 char a;
 a = '%';
-_putchar(a);
-/*write(1, &a, 1);*/
-return (a);
+return (write(1, &a, 1));
 }
 
 /**
@@ -40,15 +38,13 @@ c++;
  * @st:string input
  * Return: string length
  */
-int _strlens(const char *st)
+int _strlens(char *st)
 {
 int len = 0;
-while (*st != '\0')
+for (len = 0; st[len] != '\0'; len++)
 {
-len++;
-st++;
 }
-return len;
+return (len);
 }
 
 /**
@@ -64,12 +60,12 @@ for (s = 0; buffer[s] != '\0'; s++)
 o = buffer[s];
 if (o >= 32 && o <= 126) 
 {
-_putchar(o);
+putchar(o);
 } 
 else
 {
-_putchar('\\');
-_putchar('x');
+putchar('\\');
+putchar('x');
 sign_HEXAs(s);
 }
 }
@@ -94,7 +90,7 @@ n = (n / 16);
 }
 for (p = a - 1; p >= 0; p--)
 {
-_putchar(hexa[p]);
+putchar(hexa[p]);
 }
 return (0);
 }

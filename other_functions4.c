@@ -26,7 +26,7 @@ for (b = 0; input[b]; b++)
 if (input[b] == str[a])
 {
 print = output[b];
-_putchar(print);
+putchar(print);
 count++;
 break;
 }
@@ -34,7 +34,7 @@ break;
 if (!input[b])
 {
 print = str[a];
-_putchar(print);
+putchar(print);
 count++;
 }
 }
