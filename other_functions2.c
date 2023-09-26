@@ -90,15 +90,13 @@ return (write(1, &s, 1));
 int sign_string(char *s)
 {
 int len;
-const char *ts;
 if (s == NULL)
 {
 return (1);
 }
 if (!*s) 
 {
-ts = "(null)";
-printing(ts);
+s = "(null)";
 }
 else
 {
