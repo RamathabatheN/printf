@@ -70,7 +70,7 @@ for (i = 0; buf[i]; i++)
 {
 putchar(buf[i]);
 }
-return (0);
+return (i);
 }
 
 /**
