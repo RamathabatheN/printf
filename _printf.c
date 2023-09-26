@@ -34,16 +34,7 @@ break;
 case 's': 
 {
 str = va_arg(more, char *);
-while (*str)
-{
-if (!str)
-{
-str = "(nil)";
-}
-putchar(*str);
-(len)++;
-str++;
-}
+(len) += sign_string(str);
 break;
 }
 case 'c':

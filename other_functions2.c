@@ -89,9 +89,23 @@ return (write(1, &s, 1));
  */
 int sign_string(char *s)
 {
-int leng;
-for (leng = 0; s[leng] != '\0'; leng++)
+int len;
+const char *ts;
+if (s == NULL)
 {
+return (1);
 }
-return (write(1, s, leng));
+if (!*s) 
+{
+ts = "(null)";
+printing(ts);
+}
+else
+{
+for (len = 0; s[len]; len++)
+{
+putchar(s[len]);
+}
+}
+return (len);
 }

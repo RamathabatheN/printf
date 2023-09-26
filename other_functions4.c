@@ -41,3 +41,18 @@ count++;
 return (count);
 }
 
+/**
+ * printing - prints string "(null)"
+ * @s: input string
+ * Return: len
+ */
+int printing(const char *s)
+{
+int len;
+s = "(null)";
+for (len = 0; s[len]; len++)
+{
+putchar(s[len]);
+}
+return (len);
+}

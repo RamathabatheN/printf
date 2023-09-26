@@ -34,5 +34,6 @@ int non_printable(char *buffer);
 int sign_HEXAs(unsigned int n);
 int count_characters(const char *str);
 int count_digits(int n);
+int printing(const char *s);
 
 #endif
