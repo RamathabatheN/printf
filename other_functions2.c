@@ -58,19 +58,38 @@ return (_reverse(buf, 0, a - 1));
 
 /**
  * print_decimal - prints decimals and integers
- * @n: int to print
- * Return: Always 0 (success)
+ * @a: int to print
+ * Return: counter
  */
-int sign_decimal(int n)
+int sign_decimal(int a)
 {
-int i;
-char buf[12];
-_itoa(n, buf, 10);
-for (i = 0; buf[i]; i++)
-{
-putchar(buf[i]);
+int counter, index = 0, digit, i;
+int digits[65];
+if (a < 0) {
+a = -a;
+putchar('-');
 }
-return (i);
+if (a >= 0)
+{
+counter = counting_digits(a, 10);
+/*digits[counter];*/
+while (a != 0)
+{
+digit = a % 10;
+digits[index++] = digit;
+a /= 10;
+}
+for (i = index - 1; i >= 0; i--)
+{
+putchar('0' + digits[i]);
+}
+return (counter);
+}
+else
+{
+print("(null)");
+return -1;
+}
 }
 
 /**
@@ -85,25 +104,19 @@ return (write(1, &s, 1));
 /**
  * sign_string - prints string
  * @s: input string
- * Return: write
+ * Return: counter
  */
-int sign_string(char *s)
+int sign_string(const char *s)
 {
-int len;
-if (s == NULL)
+int counter = 0;
+if (s != NULL)
 {
-return (1);
-}
-if (!*s) 
-{
-s = "(null)";
+counter = print_andCount(s);
+return counter;
 }
 else
 {
-for (len = 0; s[len]; len++)
-{
-putchar(s[len]);
+print("(null)");
+return -1;
 }
-}
-return (len);
 }

@@ -10,7 +10,7 @@
  * @str: input string
  * Return: count
  */
-int print_rot13string(char *str)
+int print_rot13string(const char *str)
 {
 char print;
 unsigned int a, b;
@@ -42,17 +42,58 @@ return (count);
 }
 
 /**
- * printing - prints string "(null)"
- * @s: input string
- * Return: len
+ * print - print (null)
+ * @s: input integer
+ * Return: length
  */
-int printing(const char *s)
+int print(char *s)
 {
-int len;
-s = "(null)";
-for (len = 0; s[len]; len++)
+int length;
+for (length = 0; s[length] != '\0'; length++)
 {
-putchar(s[len]);
+putchar(s[length]);
 }
-return (len);
+return (length);
+}
+
+/**
+ * print_andCount - print and count characters in a string
+ * @str: input string
+ * Return: counter
+ */
+int print_andCount(const char *str)
+{
+int counter = 0;
+int len = 0;
+while (str[len] != '\0')
+{
+putchar(str[len]);
+if (str[len] != ' ' && str[len] != '\n')
+{
+counter++;
+}
+len++;
+}
+return (counter);
+}
+
+/**
+ * counting_digits - counts digits
+ * @num: input integer
+ * @base: base of the number
+ * Return: counter
+ */
+int counting_digits(int num, int base)
+{
+int counter = 0;
+while (num != 0)
+{
+int digit = num % base;
+if (digit >= 0 && digit <= 9)
+{
+counter++;
+}
+num /= base;
+}
+return (counter);
 }

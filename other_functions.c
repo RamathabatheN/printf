@@ -5,23 +5,11 @@
 #include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-return (write(1, &c, 1));
-}
-
-/**
  * rev_string - Reverses a string
  * @s: string input
  * Return: void
  */
-void rev_string(char *str)
+void rev_string(const char *str)
 {
 int top = 0;
 int a;
@@ -39,21 +27,6 @@ str--;
 putchar('\n');
 }
 
-/**
- * _strlen - returns string length
- * @st: string input
- * Return: string length
- */
-size_t _strlen(const char *st)
-{
-size_t len = 0;
-while (*st != '\0')
-{
-len++;
-st++;
-}
-return (len);
-}
  
 /**
  * _swap - swaps variables

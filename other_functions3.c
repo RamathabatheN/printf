@@ -28,7 +28,7 @@ char *c;
 c = (char *)&i;
 while (*c != '\0')
 {
-a = write(1, c, _strlen(c));
+a = write(1, c, strlen(c));
 c++; 
 }
 }
@@ -38,7 +38,7 @@ c++;
  * @st:string input
  * Return: string length
  */
-int _strlens(char *st)
+int _strlens(const char *st)
 {
 int len = 0;
 for (len = 0; st[len] != '\0'; len++)
@@ -51,7 +51,7 @@ return (len);
  * non_printable - diplays non-printables
  * Return: Always 0
  */
-int non_printable(char *buffer)
+int non_printable(const char *buffer)
 {
 int s;
 char o;
@@ -66,31 +66,9 @@ else
 {
 putchar('\\');
 putchar('x');
-sign_HEXAs(s);
+sign_HEXA(s);
 }
 }
 return 0;
 }
 
-/**
- * sign_HEXAs - prints decimals in HEXA
- * @n: int to print
- * Return: Always 0
- */
-int sign_HEXAs(unsigned int n)
-{
-char hexa[100];
-int a = 0, p;
-while (n != 0)
-{
-hexa[a] = (char)(*("0123456789ABCDEF"
-+ ((n % 16) & (2))));
-n = (n / 16);
-++a;
-}
-for (p = a - 1; p >= 0; p--)
-{
-putchar(hexa[p]);
-}
-return (0);
-}

@@ -5,41 +5,98 @@
 
 /**
  * num_binary - prints decimals in binary
- * @n: int to print
- * Return: Always 0
+ * @a: int to print
+ * Return: counter
  */
-int num_binary(unsigned int n)
+int num_binary(unsigned int a)
 {
-if (n / 2)
-num_binary(n / 2);
-putchar(n % 2 + '0');
-return (0);
+int counter, index = 0, digit, i;
+int digits[65];
+if (a)
+{
+counter = counting_digits(a, 2);
+/*digits[counter];*/
+while (a != 0)
+{
+digit = a % 2;
+digits[index++] = digit;
+a /= 2;
+}
+for (i = index - 1; i >= 0; i--)
+{
+putchar('0' + digits[i]);
+}
+return (counter);
+}
+else
+{
+print("(null)");
+return -1;
+}
 }
 
 /**
- * sign_unsigned - prints unsigned int
- * @n: int to print
- * Return: Always 0
+ * sign_unsigned - prints unsigned integers
+ * @a: int to print
+ * Return: counter
  */
-int sign_unsigned(unsigned int n)
+int sign_unsigned(unsigned int a)
 {
-if (n / 10)
-sign_unsigned(n / 10);
-putchar(n % 10 + '0');
-return (0);
+int counter, index = 0, digit, i;
+int digits[65];
+if (a)
+{
+counter = counting_digits(a, 10);
+/*digits[counter];*/
+while (a != 0)
+{
+digit = a % 10;
+digits[index++] = digit;
+a /= 10;
+}
+for (i = index - 1; i >= 0; i--)
+{
+putchar('0' + digits[i]);
+}
+return (counter);
+}
+else
+{
+print("(null)");
+return -1;
+}
 }
 
 /**
  * sign_octal - prints decimals in octal
- * @n: int to print
- * Return: Always 0
+ * @a: int to print
+ * Return: counter
  */
-int sign_octal(unsigned int n)
+int sign_octal(unsigned int a)
 {
-if (n / 8)
-sign_octal(n / 8);
-putchar(n % 8 + '0');
-return (0);
+int counter, index = 0, digit, i;
+int digits[65];
+if (a)
+{
+counter = counting_digits(a, 8);
+/*digits[counter];*/
+while (a != 0)
+{
+digit = a % 8;
+digits[index++] = digit;
+a /= 8;
+}
+for (i = index - 1; i >= 0; i--)
+{
+putchar('0' + digits[i]);
+}
+return (counter);
+}
+else
+{
+print("(null)");
+return -1;
+}
 }
 
 /**

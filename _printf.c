@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 {
 va_list more;
 char c;
-char *str;
+const char *str;
 void *k;
 unsigned int e;
 int len = 0, d;
@@ -31,9 +31,9 @@ case '%':
 putchar('%');
 (len)++;
 break;
-case 's': 
+case 's':
 {
-str = va_arg(more, char *);
+str = va_arg(more, const char *);
 (len) += sign_string(str);
 break;
 }
@@ -94,13 +94,13 @@ break;
 }
 case 'R':
 {
-str = va_arg(more, char *);
+str = va_arg(more, const char *);
 (len) += print_rot13string(str);
 break;
 }
 case 'S':
 {
-str = va_arg(more, char *);
+str = va_arg(more, const char *);
 len += non_printable(str);
 break;
 }
@@ -114,7 +114,7 @@ putchar(*format);
 else
 {
 putchar(*format);
-(len)++;           
+(len)++;
 }
 format++;
 }
